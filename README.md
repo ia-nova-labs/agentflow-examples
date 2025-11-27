@@ -10,7 +10,32 @@ First, install AgentFlow:
 pip install agentflow-ai==1.0.0
 ```
 
-## 🎯 Examples
+## ⚙️ Prerequisites
+
+Most examples require [Ollama](https://ollama.ai) running locally:
+
+```bash
+# Install Ollama (see https://ollama.ai)
+# Then pull a model:
+ollama pull qwen2.5-coder:1.5b
+```
+
+**Note**: These examples use `qwen2.5-coder:1.5b` as the default model. You can easily adapt them to use any other LLM by changing the model parameter:
+
+```python
+# Current (Qwen)
+agent = Agent(model="qwen2.5-coder:1.5b")
+
+# Or use any other Ollama model
+agent = Agent(model="llama3.1:8b")
+agent = Agent(model="mistral")
+
+# Or use OpenAI/Mistral APIs
+from agentflow import OpenAI, Mistral
+agent = Agent(model=OpenAI(model="gpt-4o"))
+agent = Agent(model=Mistral(model="mistral-large-latest"))
+```
+
 
 ### Basic Usage
 
