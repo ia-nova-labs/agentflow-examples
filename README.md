@@ -7,7 +7,7 @@ Official examples for the [AgentFlow](https://github.com/ia-nova-labs/agentflow)
 First, install AgentFlow:
 
 ```bash
-pip install agentflow-ai==1.0.0
+pip install agentflow-ai==1.0.5
 ```
 
 ## ⚙️ Prerequisites
