@@ -1,6 +1,6 @@
 # AgentFlow Examples
 
-Official examples for the [AgentFlow](https://github.com/agentflow-ai-labs/agentflow) framework.
+Official examples for the [AgentFlow](https://github.com/ia-nova-labs/agentflow) framework.
 
 ## 📦 Installation
 
@@ -33,7 +33,7 @@ pip install agentflow
 
 ```bash
 # Clone this repo
-git clone https://github.com/agentflow-ai-labs/agentflow-examples
+git clone https://github.com/ia-nova-labs/agentflow-examples
 cd agentflow-examples
 
 # Run an example
@@ -42,13 +42,13 @@ python example_basic.py
 
 ## 📚 Documentation
 
-See the main [AgentFlow documentation](https://github.com/agentflow-ai-labs/agentflow-docs) for comprehensive guides.
+See the main [AgentFlow documentation](https://github.com/ia-nova-labs/agentflow-docs) for comprehensive guides.
 
 ## 🔗 Links
 
-- [AgentFlow](https://github.com/agentflow-ai-labs/agentflow) - Main framework
-- [Documentation](https://github.com/agentflow-ai-labs/agentflow-docs) - Comprehensive guides
-- [Examples](https://github.com/agentflow-ai-labs/agentflow-examples) - This repo
+- [AgentFlow](https://github.com/ia-nova-labs/agentflow) - Main framework
+- [Documentation](https://github.com/ia-nova-labs/agentflow-docs) - Comprehensive guides
+- [Examples](https://github.com/ia-nova-labs/agentflow-examples) - This repo
 
 ## 📄 License
 
