@@ -22,7 +22,9 @@ import os
 import asyncio
 
 # Add parent directory to path
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# We need to point to the directory containing agentflow.py, which is the 'agentflow' directory
+repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(repo_root, "agentflow"))
 
 from agentflow import Agent
 from agentflow.mcp import MCPClient

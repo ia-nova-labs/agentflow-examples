@@ -16,8 +16,10 @@ import sys
 import os
 import time
 
-# Add parent directory to path so we can import agentflow
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add parent directory to path
+# We need to point to the directory containing agentflow.py, which is the 'agentflow' directory
+repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(repo_root, "agentflow"))
 
 from agentflow import Agent, Ollama, OpenAI, Mistral
 
