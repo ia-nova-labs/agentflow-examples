@@ -22,7 +22,7 @@ repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(repo_root, "agentflow"))
 
 from agentflow import Agent
-from agentflow.testing import MockModel, AgentTestClient
+from testing import MockModel, AgentTestClient
 
 
 def example_basic_mocking():

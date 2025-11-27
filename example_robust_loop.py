@@ -12,7 +12,7 @@ It shows:
 
 Requirements:
 - Ollama must be running locally (ollama serve)
-- llama3 model recommended (ollama pull llama3)
+- qwen model recommended (ollama pull qwen)
 """
 
 import sys
@@ -35,7 +35,7 @@ async def example_debug_mode():
     print("=" * 60)
     
     # Enable debug mode to see detailed logs
-    agent = Agent(model="llama3", debug=True)
+    agent = Agent(model="qwen2.5-coder:1.5b", debug=True)
     
     @agent.tool
     def get_weather(city: str) -> str:
@@ -57,7 +57,7 @@ async def example_tool_timeout():
     print("=" * 60)
     
     # Set a short timeout for demonstration
-    agent = Agent(model="llama3", tool_timeout=3, debug=True)
+    agent = Agent(model="qwen2.5-coder:1.5b", tool_timeout=3, debug=True)
     
     @agent.tool
     def slow_operation(seconds: int) -> str:
@@ -83,7 +83,7 @@ async def example_loop_detection():
     print("Example 3: Infinite Loop Detection")
     print("=" * 60)
     
-    agent = Agent(model="llama3", debug=True)
+    agent = Agent(model="qwen2.5-coder:1.5b", debug=True)
     
     @agent.tool
     def check_status() -> str:
@@ -114,7 +114,7 @@ async def example_json_auto_repair():
     print("- Sends feedback to LLM if repair fails")
     print("\nThis happens automatically in the background!")
     
-    agent = Agent(model="llama3", debug=False)
+    agent = Agent(model="qwen2.5-coder:1.5b", debug=False)
     
     @agent.tool
     def calculate(expression: str) -> float:
@@ -135,7 +135,7 @@ async def example_max_iterations():
     print("Example 5: Max Iterations Protection")
     print("=" * 60)
     
-    agent = Agent(model="llama3", debug=True)
+    agent = Agent(model="qwen2.5-coder:1.5b", debug=True)
     
     @agent.tool
     def count(n: int) -> int:

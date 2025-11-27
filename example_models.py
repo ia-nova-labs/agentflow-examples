@@ -27,14 +27,14 @@ from agentflow import Agent, Ollama, OpenAI, Mistral
 def example_ollama():
     """Example 1: Local Ollama Model (Default)."""
     print("=" * 60)
-    print("Example 1: Local Ollama (llama3)")
+    print("Example 1: Local Ollama (qwen)")
     print("=" * 60)
     
     # Method A: String shortcut (defaults to Ollama)
-    agent = Agent(model="llama3")
+    agent = Agent(model="qwen2.5-coder:1.5b")
     
     # Method B: Explicit class (same result)
-    # model = Ollama(model="llama3")
+    # model = Ollama(model="qwen2.5-coder:1.5b")
     # agent = Agent(model=model)
     
     print(f"Using model: {agent.model.model}")

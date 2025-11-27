@@ -9,7 +9,7 @@ It shows:
 
 Requirements:
 - Ollama must be running locally (ollama serve)
-- llama3 model recommended (ollama pull llama3)
+- qwen model recommended (ollama pull qwen)
 """
 
 import sys
@@ -31,7 +31,7 @@ def example_in_memory():
     print("=" * 60)
     
     # By default, Agent uses InMemory
-    agent = Agent(model="llama3")
+    agent = Agent(model="qwen2.5-coder:1.5b")
     print(f"Memory type: {type(agent.memory).__name__}")
     
     agent.run("My favorite fruit is apple.")
@@ -54,7 +54,7 @@ def example_file_memory():
     
     # Create agent with FileMemory
     memory = FileMemory(memory_file)
-    agent = Agent(model="llama3", memory=memory)
+    agent = Agent(model="qwen2.5-coder:1.5b", memory=memory)
     print(f"Memory type: {type(agent.memory).__name__}")
     print(f"Current message count: {agent.memory.count()}")
     

@@ -40,7 +40,7 @@ async def example_filesystem_server():
     print("   Server can read/write files in /tmp directory\n")
     
     # Create agent
-    agent = Agent(model="llama3", debug=False)
+    agent = Agent(model="qwen2.5-coder:1.5b", debug=False)
     
     # Connect to filesystem MCP server
     # This server provides file operations for /tmp directory
@@ -98,7 +98,7 @@ async def example_git_server():
     print("\n🔧 Starting Git MCP server...")
     print("   Server provides Git operations\n")
     
-    agent = Agent(model="llama3", debug=False)
+    agent = Agent(model="qwen2.5-coder:1.5b", debug=False)
     
     # Connect to Git MCP server
     mcp_client = MCPClient(
@@ -149,7 +149,7 @@ async def example_mixed_tools():
     
     print("\n🔀 Combining local Python tools with MCP tools...\n")
     
-    agent = Agent(model="llama3", debug=False)
+    agent = Agent(model="qwen2.5-coder:1.5b", debug=False)
     
     # Add local Python tool
     @agent.tool
@@ -205,7 +205,7 @@ async def example_mcp_context_manager():
     
     print("\n🔄 Using async context manager for automatic cleanup...\n")
     
-    agent = Agent(model="llama3", debug=False)
+    agent = Agent(model="qwen2.5-coder:1.5b", debug=False)
     
     # Use context manager for automatic connect/disconnect
     async with MCPClient(

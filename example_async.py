@@ -10,7 +10,7 @@ It shows:
 
 Requirements:
 - Ollama must be running locally (ollama serve)
-- llama3 model recommended (ollama pull llama3)
+- qwen2.5-coder:1.5b model recommended (ollama pull qwen2.5-coder:1.5b)
 """
 
 import sys
@@ -32,7 +32,7 @@ async def example_async_usage():
     print("Example 1: Async Usage (await agent.arun())")
     print("=" * 60)
     
-    agent = Agent(model="llama3")
+    agent = Agent(model="qwen2.5-coder:1.5b")
     
     print("\nAsking: What is the capital of France?")
     start = time.time()
@@ -46,20 +46,19 @@ async def example_async_usage():
     print()
 
 
-def example_sync_usage():
-    """Example 2: Sync usage (backward compatible)."""
+async def example_sync_usage():
     print("=" * 60)
-    print("Example 2: Sync Usage (agent.run()) - Backward Compatible")
+    print("Example 2: Sync Usage (converted to async)")
     print("=" * 60)
-    
-    agent = Agent(model="llama3")
-    
+
+    agent = Agent(model=MODEL)
+
     print("\nAsking: What is 2 + 2?")
     start = time.time()
-    
-    # This is the sync way - still works for backward compatibility
-    response = agent.run("What is 2 + 2?")
-    
+
+    # ❗ Call async version since we are inside async loop
+    response = await agent.arun("What is 2 + 2?")
+
     elapsed = time.time() - start
     print(f"Agent: {response}")
     print(f"Time: {elapsed:.2f}s")
@@ -72,7 +71,7 @@ async def example_async_with_tools():
     print("Example 3: Async with Tools")
     print("=" * 60)
     
-    agent = Agent(model="llama3")
+    agent = Agent(model="qwen2.5-coder:1.5b")
     
     # Register a tool
     @agent.tool
@@ -97,9 +96,9 @@ async def example_concurrent_agents():
     start = time.time()
     
     # Create 3 agents with different questions
-    agent1 = Agent(model="llama3")
-    agent2 = Agent(model="llama3")
-    agent3 = Agent(model="llama3")
+    agent1 = Agent(model="qwen2.5-coder:1.5b")
+    agent2 = Agent(model="qwen2.5-coder:1.5b")
+    agent3 = Agent(model="qwen2.5-coder:1.5b")
     
     # Run them all concurrently
     results = await asyncio.gather(
@@ -125,7 +124,6 @@ async def main():
     
     try:
         await example_async_usage()
-        example_sync_usage()  # Sync example doesn't need await
         await example_async_with_tools()
         await example_concurrent_agents()
         

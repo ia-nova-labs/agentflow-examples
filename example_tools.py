@@ -6,7 +6,7 @@ your agent capabilities like calculation and data retrieval.
 
 Requirements:
 - Ollama must be running locally (ollama serve)
-- llama3 model recommended (ollama pull llama3)
+- qwen model recommended (ollama pull qwen)
 """
 
 import sys
@@ -27,7 +27,7 @@ def example_calculator_tool():
     print("Example 1: Calculator Tool")
     print("=" * 60)
     
-    agent = Agent(model="llama3")
+    agent = Agent(model="qwen2.5-coder:1.5b")
     
     # Register a tool
     @agent.tool
@@ -59,7 +59,7 @@ def example_weather_tool():
     print("Example 2: Weather Tool")
     print("=" * 60)
     
-    agent = Agent(model="llama3")
+    agent = Agent(model="qwen2.5-coder:1.5b")
     
     @agent.tool
     def get_weather(city: str) -> dict:
@@ -94,7 +94,7 @@ def example_multi_step_reasoning():
     print("Example 3: Multi-step Reasoning")
     print("=" * 60)
     
-    agent = Agent(model="llama3")
+    agent = Agent(model="qwen2.5-coder:1.5b")
     
     @agent.tool
     def get_product_price(product_name: str) -> float:
